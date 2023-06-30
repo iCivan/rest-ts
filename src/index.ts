@@ -1,20 +1,20 @@
-import HTTP from 'http';
+import http from 'http';
 import { getTasks, addTask, updateTask, deleteTask } from './controller'
 
-const server = HTTP.createServer((req, res) => {
-    if (req.url === 'api/tasks' && req.method === 'GET') {
+const server = http.createServer((req, res) => {
+    if (req.url === '/api/tasks' && req.method === 'GET') {
         return getTasks(req, res)
     }
 
-    if (req.url === 'api/tasks' && req.method === 'POST') {
+    if (req.url === '/api/tasks' && req.method === 'POST') {
         return addTask(req, res)
     }
 
-    if (req.url === 'api/tasks' && req.method === 'PUT') {
+    if (req.url === '/api/tasks' && req.method === 'PUT') {
         return updateTask(req, res)
     }
 
-    if (req.url === 'api/tasks' && req.method === 'DELETE') {
+    if (req.url === '/api/tasks' && req.method === 'DELETE') {
         return deleteTask(req, res)
     }
 })
